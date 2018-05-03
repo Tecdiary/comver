@@ -2,6 +2,7 @@
   "name": "@tecdiary/comver",
   "version": "1.0.0",
   "description": "Command-line helper for PHP/Composer to bump versions similar to npm version.",
+  "repository": "https://github.com/tecdiary/comver",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -11,6 +12,13 @@
   },
   "author": "Mian Saleem <mian.saleem@yahoo.com>",
   "license": "MIT",
+  "keywords": [
+    "composer",
+    "version",
+    "php",
+    "git",
+    "tag"
+  ],
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-jest": "^15.0.0",
