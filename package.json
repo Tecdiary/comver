@@ -1,0 +1,27 @@
+{
+  "name": "@tecdiary/comver",
+  "version": "1.0.0",
+  "description": "Command-line helper for PHP/Composer to bump versions similar to npm version.",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "bin": {
+    "comver": "./lib/cli.js"
+  },
+  "author": "Mian Saleem <mian.saleem@yahoo.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-jest": "^15.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "jest": "^15.1.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "npm run build",
+    "bl": "babel src --out-dir lib"
+  }
+}
