@@ -9,8 +9,7 @@ module.exports = args => new Promise((resolve) => {
     const allowedTypes = ['patch', 'minor', 'major', '-v', '-h'];
     if (allowedTypes.includes(type)) {
         if (type == '-v' || type == '-h') {
-            const libPkg = path.resolve('package.json');
-            const cvPkg = require(libPkg);
+            const cvPkg = require('../package.json');
 
             console.log(colors.fg.Cyan, colors.Bright, `
 ${cvPkg.name} -`, colors.fg.Magenta, `v${cvPkg.version}`, colors.Reset, `
