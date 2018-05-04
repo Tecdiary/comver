@@ -43,7 +43,7 @@ Please check https://semver.org/ to know more about Semantic Versioning.`);
                             console.log(colors.fg.Yellow, `Unable to set package.json version: `, ex);
                         }
                         const tagName = `v${nextVersion}`;
-                        createGitCommit(tagName).then(createGitTag).then(pushGitTag).then(tag => resolve(tag));
+                        createGitCommit(tagName).then(createGitTag).then(tag => resolve(tag));
                     }).catch((err) => {
                         console.log(colors.fg.Red, 'Working directory is not clean!', colors.Reset);
                         console.log(colors.fg.Yellow, 'Please commit your changes before versioning.', colors.Reset);
