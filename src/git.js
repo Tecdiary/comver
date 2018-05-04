@@ -1,8 +1,9 @@
+const { colors } = require('./colors');
 const { exec } = require('child_process');
 
 const createGitCommit = tag => new Promise((resolve) => {
   // const cmdAdd = 'git add composer.json';
-  console.log("git adding...");
+  console.log(colors.fg.Cyan, "git adding...", colors.Reset);
   const cmdAdd = 'git add .';
   exec(cmdAdd, (err1) => {
     if (!err1) {
@@ -12,17 +13,17 @@ const createGitCommit = tag => new Promise((resolve) => {
         if (!err2) {
           resolve(tag);
         } else {
-          console.error(err2);
+          console.log(colors.fg.Red, err2, colors.Reset);
         }
       });
     } else {
-      console.error(err1);
+      console.log(colors.fg.Red, err1, colors.Reset);
     }
   });
 });
 
 const statusGit = () => new Promise((resolve, reject) => {
-  console.log("git status...");
+  console.log(colors.fg.Cyan, "git status...", colors.Reset);
   const cmd = `git status --porcelain`;
   exec(cmd, (err, stdout, stderr) => {
     if (!err) {
@@ -32,31 +33,31 @@ const statusGit = () => new Promise((resolve, reject) => {
         resolve();
       }
     } else {
-      console.error(err);
+      reject(err);
     }
   });
 });
 
 const createGitTag = tag => new Promise((resolve) => {
-  console.log("git tagging...");
+  console.log(colors.fg.Cyan, "git tagging...", colors.Reset);
   const cmd = `git tag -a ${tag} -m "${tag}"`;
   exec(cmd, (err) => {
     if (!err) {
       resolve(tag);
     } else {
-      console.error(err);
+      console.log(colors.fg.Red, err, colors.Reset);
     }
   });
 });
 
 const pushGitTag = tag => new Promise((resolve) => {
-  console.log("git pushing...");
+  console.log(colors.fg.Cyan, "git pushing...", colors.Reset);
   const cmd = `git push --follow-tags -f`;
   exec(cmd, (err) => {
     if (!err) {
       resolve(tag);
     } else {
-      console.error(err);
+      console.log(colors.fg.Red, err, colors.Reset);
     }
   });
 });
