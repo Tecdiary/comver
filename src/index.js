@@ -12,16 +12,17 @@ module.exports = args => new Promise((resolve) => {
       const libPkg = path.resolve('package.json');
       const cvPkg = require(libPkg);
       console.log(colors.fg.Cyan, `
- ${cvPkg.name} v${cvPkg.version}
+${cvPkg.name} -`, colors.fg.Magenta, `v${cvPkg.version}`, colors.Reset, `
 
- ${cvPkg.description}
- By: ${cvPkg.author}
+${cvPkg.description}
+By: ${cvPkg.author}
 
- Help:`,
- colors.fg.Green, `comver major  - to bump major version 0.0.0 to 1.0.0`,
- colors.fg.Cyan, `comver minor  - to bump minor version 0.0.0 to 0.1.0`,
- colors.fg.Yellow, `comver patch  - to bump patch version 0.0.0 to 0.0.1`,
-colors.Reset, `
+Help:`, colors.fg.Green, `
+
+  comver major  - to bump major version 0.0.0 to 1.0.0`, colors.fg.Cyan, `
+  comver minor  - to bump minor version 0.0.0 to 0.1.0`, colors.fg.Yellow, `
+  comver patch  - to bump patch version 0.0.0 to 0.0.1`, colors.Reset, `
+
 Please check https://semver.org/ to know more about Semantic Versioning.`);
     } else {
       const composerJson = path.join(process.cwd(), 'composer.json');

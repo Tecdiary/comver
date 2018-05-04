@@ -5,7 +5,6 @@ const { colors } = require('./colors');
 const { statusGit } = require('./git');
 
 statusGit().then((res) => {
-  console.log(res);
   if (process.argv.length >= 3) {
     const args = process.argv[2].split(' ');
     comver(args).then((tag) => {
