@@ -11,17 +11,17 @@ module.exports = args => new Promise((resolve) => {
       const libPkg = path.resolve('package.json');
       const cvPkg = require(libPkg);
       console.log(`
-  ${cvPkg.name} v${cvPkg.version}
+${cvPkg.name} v${cvPkg.version}
 
-  ${cvPkg.description}
-  By: ${cvPkg.author}
+${cvPkg.description}
+By: ${cvPkg.author}
 
-  Help:
-    comver major  - to bump major version 0.0.0 to 1.0.0
-    comver minor  - to bump minor version 0.0.0 to 0.1.0
-    comver patch  - to bump patch version 0.0.0 to 0.0.1
+Help:
+  comver major  - to bump major version 0.0.0 to 1.0.0
+  comver minor  - to bump minor version 0.0.0 to 0.1.0
+  comver patch  - to bump patch version 0.0.0 to 0.0.1
 
-  Please check https://semver.org/ to know more about Semantic Versioning.
+Please check https://semver.org/ to know more about Semantic Versioning.
       `);
     } else {
       const composerJson = path.join(process.cwd(), 'composer.json');
