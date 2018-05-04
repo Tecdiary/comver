@@ -7,7 +7,7 @@ const createGitCommit = tag => new Promise((resolve) => {
     const cmdAdd = 'git add .';
     exec(cmdAdd, (err1) => {
         if (!err1) {
-            console.log("git committing...");
+            console.log(colors.fg.Cyan, `git committing...`, colors.Reset);
             const cmdCommit = `git commit -m ${tag}`;
             exec(cmdCommit, (err2) => {
                 if (!err2) {
