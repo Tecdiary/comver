@@ -3,11 +3,11 @@ const { exec } = require('child_process');
 
 const createGitCommit = tag => new Promise((resolve) => {
     // const cmdAdd = 'git add composer.json';
-    console.log(colors.fg.Cyan, `git adding...`, colors.Reset);
+    console.log(colors.fg.Cyan, `git add...`, colors.Reset);
     const cmdAdd = 'git add .';
     exec(cmdAdd, (err1) => {
         if (!err1) {
-            console.log(colors.fg.Cyan, `git committing...`, colors.Reset);
+            console.log(colors.fg.Cyan, `git commit...`, colors.Reset);
             const cmdCommit = `git commit -m ${tag}`;
             exec(cmdCommit, (err2) => {
                 if (!err2) {
@@ -39,8 +39,8 @@ const statusGit = () => new Promise((resolve, reject) => {
 });
 
 const createGitTag = tag => new Promise((resolve) => {
-    console.log(colors.fg.Cyan, `git tagging...`, colors.Reset);
-    const cmd = `git tag -a ${tag} -m "${tag}"`;
+    console.log(colors.fg.Cyan, `git tag...`, colors.Reset);
+    const cmd = `git tag -s ${tag} -m "${tag}"`;
     exec(cmd, (err) => {
         if (!err) {
             resolve(tag);
@@ -51,8 +51,8 @@ const createGitTag = tag => new Promise((resolve) => {
 });
 
 const pushGitTag = tag => new Promise((resolve) => {
-    console.log(colors.fg.Cyan, `git pushing...`, colors.Reset);
-    const cmd = `git push --follow-tags -f`;
+    console.log(colors.fg.Cyan, `git push...`, colors.Reset);
+    const cmd = `git push --follow-tags`;
     exec(cmd, (err) => {
         if (!err) {
             resolve(tag);
