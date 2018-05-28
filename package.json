@@ -1,6 +1,6 @@
 {
   "name": "@tecdiary/comver",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Command-line helper for PHP/Composer to bump versions similar to npm version.",
   "repository": "https://github.com/tecdiary/comver",
   "main": "lib/index.js",
