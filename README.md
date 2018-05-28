@@ -1,4 +1,4 @@
-# composer-version
+# comver (composer version)
 
 > Command-line helper for [Composer](https://getcomposer.org) to bump versions similar to `npm version`.
 
@@ -16,4 +16,10 @@ $ npm i -g @tecdiary/comver
 
 ```
 $ comver [major | minor | patch]
+```
+
+### Set to push tags
+If you want to push your tags to remote repo, you will need to set `push.followTags` to `true`
+```
+git config --global push.followTags true
 ```
