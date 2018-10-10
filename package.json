@@ -12,7 +12,8 @@
   },
   "author": {
     "name": "Mian Saleem",
-    "email": "saleem@tecdiary.com"
+    "email": "saleem@tecdiary.com",
+    "url": "http://tecdiary.com"
   },
   "license": "MIT",
   "keywords": [
@@ -32,6 +33,7 @@
   },
   "scripts": {
     "test": "jest",
-    "bl": "babel src --out-dir lib"
+    "lib": "babel src --out-dir lib",
+    "bl": "npm run lib && git add . && git commit -m "
   }
 }
