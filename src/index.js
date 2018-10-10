@@ -15,7 +15,7 @@ module.exports = args => new Promise((resolve) => {
 ${cvPkg.name} -`, colors.fg.Magenta, `v${cvPkg.version}`, colors.Reset, `
 
 ${cvPkg.description}
-By: ${cvPkg.author}
+By: ${cvPkg.author.name}
 
 Help:`, colors.fg.Green, colors.Bright, `
 

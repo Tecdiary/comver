@@ -10,7 +10,7 @@
   "bin": {
     "comver": "./lib/cli.js"
   },
-  "author": "Mian Saleem <mian.saleem@yahoo.com>",
+  "author": "Mian Saleem <saleem@tecdiary.com>",
   "license": "MIT",
   "keywords": [
     "composer",
